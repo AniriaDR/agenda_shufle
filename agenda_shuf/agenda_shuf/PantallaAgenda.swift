@@ -7,11 +7,25 @@
 
 import SwiftUI
 
+var contactos = [
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+    ContactoAgenda(nombre: "Teto", telefono: "123456789"),
+]
+
 struct PantallaAgenda: View {
     var body: some View {
         List{
             VStack {
-                ForEach(0...45, id: \.self){ _ in
+                ForEach(contactos){ contacto in
+                    Text("\(contacto.nombre)")
                 contacto_prevista()
                 }
                 
