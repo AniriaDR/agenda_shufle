@@ -21,9 +21,8 @@ struct contacto_prevista: View {
                 Image("canelita")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 75, alignment: .center)
+                    .frame(height: 80, alignment: .center)
                     .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
-                    .background(Color.white)
             }
             
             Spacer()
@@ -34,14 +33,13 @@ struct contacto_prevista: View {
             }
             
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.gray)
+
             
             Spacer()
             
         }
         
-        .frame(width: 250)
-        .background(Color.red)
+        .frame(width: 300)
         .onTapGesture {
             al_pulsar()
         }

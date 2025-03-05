@@ -20,38 +20,42 @@ struct PantallaAgregarContacto: View {
     }
     
     var body: some View {
-        Text("Colocar la etiqueta de nombre")
+        Text("Nombre de tu contacto:)")
         ZStack{
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: 75)
-                .foregroundColor(Color.cyan)
-            TextField("Place holder", text: $nombre)
+                .foregroundColor(Color.white)
+            TextField("Nombre<3", text: $nombre)
                 //.border(Rectangle(), width: 15)
         }
         .padding(10)
         
-        Text("Colocar el campo de numero telefonico")
-        TextField("Place holder numeros", text: $numero_telefonico)
+        Text("Su numero de telefono")
+        TextField("Telefono<3", text: $numero_telefonico)
             .frame(height: 35)
             .padding(10)
         
         HStack{
-            Icono(tamaño: 25, ruta_icon: "person.crop.circle.badge.plus", padding: 10)
+            Icono(tamaño: 30, ruta_icon: "person.crop.circle.badge.plus", padding: 10)
                 .onTapGesture {
                     boton_agregar(nombre, numero_telefonico)
                 }
+                .background(Color.Resolved(red: 0.98, green: 0.78, blue: 0.84))
             Spacer()
             Icono(tamaño: 25, ruta_icon: "return")
-                .background(nombre == "" ? Color.red: Color.cyan)
+                .background(nombre == "" ? Color.pink: Color.cyan)
                 .onTapGesture {
                     boton_salir()
                 }
 
         }
-        .background(Color.cyan)
+        
         
     }
+
+
 }
+
 
 #Preview {
     PantallaAgregarContacto()

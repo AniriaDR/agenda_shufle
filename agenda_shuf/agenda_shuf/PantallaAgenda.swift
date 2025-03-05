@@ -37,7 +37,7 @@ struct PantallaAgenda: View {
         }
         .frame(alignment: Alignment.center)
         .padding(10)
-        .background(Color.cyan)
+
         
         Spacer()
         
@@ -46,13 +46,12 @@ struct PantallaAgenda: View {
                 Circle()
                     .frame(width: 100)
                     .tint(Color.red)
-                    .foregroundColor(Color.green)
+                    .foregroundColor(Color.white)
                 
-                Rectangle()
+                /*Rectangle()
                     .frame(width: 65, height: 65)
-                    .foregroundColor(Color.cyan)
+                    .foregroundColor(Color.cyan)*/
                 Image(systemName: "plus")
-                    .background(Color.red)
     
             }
             .padding(15)
@@ -66,13 +65,9 @@ struct PantallaAgenda: View {
                 Circle()
                     .frame(width: 100)
                     .tint(Color.red)
-                    .foregroundColor(Color.green)
-                
-                Circle()
-                    .frame(width: 65, height: 65)
-                    .foregroundColor(Color.cyan)
+                    .foregroundColor(Color.white)
+
                 Image(systemName: "shuffle")
-                    .background(Color.red)
     
             }
             .padding(15)
@@ -83,6 +78,7 @@ struct PantallaAgenda: View {
                     print("Lanzar un intent para iniciar la llamada")
                 }
         }
+        .background(Color .mint)
         .sheet(isPresented: $mostrar_pantalla_agregar_contacto, content: {
             PantallaAgregarContacto(
                 boton_salir: {

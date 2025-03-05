@@ -16,6 +16,7 @@
 		FB07572A2D6F7C0B00C6BEBF /* PantallaAgenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0757292D6F7C0B00C6BEBF /* PantallaAgenda.swift */; };
 		FB07572D2D6F801C00C6BEBF /* contacto_prevista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07572C2D6F801C00C6BEBF /* contacto_prevista.swift */; };
 		FB0757302D6F871700C6BEBF /* contacto_agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07572F2D6F871700C6BEBF /* contacto_agenda.swift */; };
+		FB7CD2572D78BD03006F7A5D /* pantalla_del_ganador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD2562D78BD03006F7A5D /* pantalla_del_ganador.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		FB0757292D6F7C0B00C6BEBF /* PantallaAgenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallaAgenda.swift; sourceTree = "<group>"; };
 		FB07572C2D6F801C00C6BEBF /* contacto_prevista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacto_prevista.swift; sourceTree = "<group>"; };
 		FB07572F2D6F871700C6BEBF /* contacto_agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacto_agenda.swift; sourceTree = "<group>"; };
+		FB7CD2562D78BD03006F7A5D /* pantalla_del_ganador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_del_ganador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				FB02CF3D2D7618CC0067B2F4 /* pantalla_agregar_contacto.swift */,
+				FB7CD2562D78BD03006F7A5D /* pantalla_del_ganador.swift */,
 			);
 			path = pantallas;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB07571E2D6F7B2000C6BEBF /* ContentView.swift in Sources */,
+				FB7CD2572D78BD03006F7A5D /* pantalla_del_ganador.swift in Sources */,
 				FB07572A2D6F7C0B00C6BEBF /* PantallaAgenda.swift in Sources */,
 				FB0757302D6F871700C6BEBF /* contacto_agenda.swift in Sources */,
 				FB02CF402D761C420067B2F4 /* Icono.swift in Sources */,
