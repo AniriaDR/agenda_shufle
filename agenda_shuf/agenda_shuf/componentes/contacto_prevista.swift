@@ -18,7 +18,7 @@ struct contacto_prevista: View {
             Spacer()
             
             VStack {
-                Image("Imagen")
+                Image("canelita")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 75, alignment: .center)
