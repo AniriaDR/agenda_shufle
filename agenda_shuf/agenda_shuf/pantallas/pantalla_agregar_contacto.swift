@@ -10,12 +10,13 @@ import SwiftUI
 struct PantallaAgregarContacto: View {
     @State private var nombre: String = ""
     @State private var numero_telefonico: String = ""
+    @State private var imagen_seleccionada: String = "imagen"
     
     var boton_salir: () -> Void = {
         print("t equivocaste luser")
     }
     
-    var boton_agregar: (_ nombre: String, _ numero: String) -> Void = {nombre, numero in
+    var boton_agregar: (_ nombre: String, _ numero: String, _ imagen: String) -> Void = {nombre, numero, imagen in
         print("t equivocaste luser")
     }
     
@@ -38,7 +39,7 @@ struct PantallaAgregarContacto: View {
         HStack{
             Icono(tamaño: 30, ruta_icon: "person.crop.circle.badge.plus", padding: 10)
                 .onTapGesture {
-                    boton_agregar(nombre, numero_telefonico)
+                    boton_agregar(nombre, numero_telefonico, imagen_seleccionada)
                 }
                 .background(Color.Resolved(red: 0.98, green: 0.78, blue: 0.84))
             Spacer()
@@ -48,6 +49,29 @@ struct PantallaAgregarContacto: View {
                     boton_salir()
                 }
 
+        }
+        HStack {
+            Image("canelita")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 75)
+                .onTapGesture {
+                    imagen_seleccionada = "imagen"
+                }
+            Image("totakeke")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 75)
+                .onTapGesture {
+                    imagen_seleccionada = "imagen2"
+                }
+            Image("TomNook")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 75)
+                .onTapGesture {
+                    imagen_seleccionada = "imagen2"
+                }
         }
         
         

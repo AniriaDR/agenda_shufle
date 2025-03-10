@@ -8,11 +8,15 @@
 import SwiftUI
 
 var contacto_alterno = ContactoAgenda(nombre: "Tom Nook", telefono: "12345")
-struct pantalla_del_ganador: View {
+struct PantallaDelGanador: View {
     var contacto_a_molestar: ContactoAgenda
     
     var body: some View {
-            ZStack{
+        Text("El actual ganador de la isla.")
+            .foregroundColor(.green)
+            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            .bold()
+        ZStack{
                 Circle()
                     .frame(width: 250)
                     .tint(Color.red)
@@ -25,9 +29,13 @@ struct pantalla_del_ganador: View {
     
             }
         VStack{
-            
+            Text("Felicidades a:")
+                .bold()
+                .font(.title3)
             Text(contacto_a_molestar.nombre)
             Text(contacto_a_molestar.telefono)
+            Text("Haz ganado que nunca te pague las  bayas que debo.")
+                .multilineTextAlignment(.center)
         }
 
             .background(Color(red: 0.85, green: 0.93, blue: 0.80))
@@ -35,5 +43,5 @@ struct pantalla_del_ganador: View {
 }
 
 #Preview {
-    pantalla_del_ganador(contacto_a_molestar: contacto_alterno)
+    PantallaDelGanador(contacto_a_molestar: contacto_alterno)
 }

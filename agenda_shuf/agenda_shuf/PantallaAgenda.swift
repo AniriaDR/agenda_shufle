@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var contactos = [
+/*var contactos = [
     ContactoAgenda(nombre: "Teto", telefono: "123456789"),
     ContactoAgenda(nombre: "Teto", telefono: "123456789"),
     ContactoAgenda(nombre: "Teto", telefono: "123456789"),
@@ -18,15 +18,26 @@ var contactos = [
     ContactoAgenda(nombre: "Teto", telefono: "123456789"),
     ContactoAgenda(nombre: "Teto", telefono: "123456789"),
     ContactoAgenda(nombre: "Teto", telefono: "123456789"),
-]
+]*/
 
+
+enum PantallasDisponibles: String, Identifiable{
+    case pantalla_agregar, pantalla_aletoria
+    
+    var id: String { rawValue }
+}
 struct PantallaAgenda: View {
-
+    var largo_de_pantalla = UIScreen.main.bounds.width
+    var ancho_de_pantalla = UIScreen.main.bounds.height
     
-    @State var mostrar_pantalla_agregar_contacto: Bool = true
-    
+    @State private var imagen_seleccionada: String = "imagen"
     @State var contactos_actuales: [ContactoAgenda] = [
-        ContactoAgenda(nombre: "Canelita", telefono: "123456789")]
+        ContactoAgenda(nombre: "Canelita", telefono: "123456789", imagen: "canelita"),
+        ContactoAgenda(nombre: "Totakeke", telefono: "847538458", imagen: "totakeke")
+        
+    ]
+    
+    @State var pantalla_a_mostrar: PantallasDisponibles?
     
     var body: some View {
         ScrollView{
@@ -57,7 +68,7 @@ struct PantallaAgenda: View {
             .padding(15)
             .onTapGesture {
                 print("Falta implementar esta parte")
-                mostrar_pantalla_agregar_contacto.toggle()
+                pantalla_a_mostrar = PantallasDisponibles.pantalla_agregar
             }
             Spacer()
             
@@ -72,25 +83,34 @@ struct PantallaAgenda: View {
             }
             .padding(15)
             .onTapGesture {
-                print("Falta implementar esta parte") }
-            
-                .onTapGesture {
-                    print("Lanzar un intent para iniciar la llamada")
+                print("Lanzar un intent para iniciar la llamada")
+                pantalla_a_mostrar = PantallasDisponibles.pantalla_aletoria
                 }
         }
         .background(Color .mint)
-        .sheet(isPresented: $mostrar_pantalla_agregar_contacto, content: {
-            PantallaAgregarContacto(
-                boton_salir: {
-                    mostrar_pantalla_agregar_contacto.toggle()
-                },
-                boton_agregar: {nombre, numero in
-                    let contacto_nuevo = ContactoAgenda(nombre: nombre, telefono: numero)
-                    contactos_actuales.append(contacto_nuevo)
-                    mostrar_pantalla_agregar_contacto.toggle()
-                })
-        })
+ 
+        .sheet(item: $pantalla_a_mostrar){ pantalla in
+            switch(pantalla){
+            case .pantalla_agregar:
+                PantallaAgregarContacto(
+                    boton_salir: {
+                        pantalla_a_mostrar = nil
+                    },
+                    boton_agregar: {nombre, numero, imagen_seleccionada in
+                        let contacto_nuevo = ContactoAgenda(nombre: nombre, telefono: numero, imagen: imagen_seleccionada)
+                        contactos_actuales.append(contacto_nuevo)
+                        pantalla_a_mostrar = nil
+                    }
+                )
+            case .pantalla_aletoria:
+                PantallaDelGanador(
+                    contacto_a_molestar: contacto_alterno)
+            }
+        
+        }
     }
+    
+    
 }
 
 #Preview {

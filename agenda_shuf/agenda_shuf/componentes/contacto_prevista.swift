@@ -13,16 +13,18 @@ struct contacto_prevista: View {
     var al_pulsar: () -> Void = {print("No se ha implementado")}
     
     let esquinas_redondeadas = CGSize(width: 25, height: 25)
+    
+    
     var body: some View {
         HStack (alignment: VerticalAlignment.center) {
             Spacer()
             
             VStack {
-                Image("canelita")
+                Image("imagen")
+                Image(contacto_a_mostar.imagen)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 80, alignment: .center)
-                    .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
             }
             
             Spacer()
