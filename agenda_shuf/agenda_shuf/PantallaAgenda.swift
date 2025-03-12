@@ -33,22 +33,30 @@ struct PantallaAgenda: View {
     @State private var imagen_seleccionada: String = "imagen"
     @State var contactos_actuales: [ContactoAgenda] = [
         ContactoAgenda(nombre: "Canelita", telefono: "123456789", imagen: "canelita"),
-        ContactoAgenda(nombre: "Totakeke", telefono: "847538458", imagen: "totakeke")
+        ContactoAgenda(nombre: "Totakeke", telefono: "847538458", imagen: "totakeke"),
+        ContactoAgenda(nombre: "TomNook", telefono: "12345", imagen: "TomNook")
         
     ]
     
     @State var pantalla_a_mostrar: PantallasDisponibles?
     
     var body: some View {
-        ScrollView{
-            VStack(spacing: 10) {
-                ForEach(contactos_actuales){ contacto in
-                    contacto_prevista(contacto_a_mostar: contacto, al_pulsar: {print("Te envia saludos \(contacto.nombre) desde la pantalla de agendar")})}
+        NavigationStack{
+            ScrollView{
+                VStack(spacing: 10) {
+                    ForEach(contactos_actuales){ contacto in
+                        NavigationLink{
+                            Text("Hola mongolo")
+                        } label: {
+                            contacto_prevista(contacto_a_mostar: contacto, al_pulsar: {print("Te envia saludos \(contacto.nombre) desde la pantalla de agendar")})}
+                        }
+                        
+                }
             }
+            .frame(alignment: Alignment.center)
+            .padding(10)
+            .tint(Color.black)
         }
-        .frame(alignment: Alignment.center)
-        .padding(10)
-
         
         Spacer()
         
@@ -104,7 +112,8 @@ struct PantallaAgenda: View {
                 )
             case .pantalla_aletoria:
                 PantallaDelGanador(
-                    contacto_a_molestar: contacto_alterno)
+                    contacto_a_molestar: contactos_actuales.randomElement() ??
+                    contactos_actuales[0])
             }
         
         }

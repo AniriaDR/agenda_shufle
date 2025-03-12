@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-var contacto_alterno = ContactoAgenda(nombre: "Tom Nook", telefono: "12345")
+var contacto_alterno = ContactoAgenda(nombre: "Tom Nook", telefono: "12345", imagen: "TomNook")
 struct PantallaDelGanador: View {
     var contacto_a_molestar: ContactoAgenda
     
@@ -22,7 +22,7 @@ struct PantallaDelGanador: View {
                     .tint(Color.red)
                     .foregroundColor(Color.green)
 
-                Image("TomNook")
+            Image(contacto_a_molestar.imagen)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150)

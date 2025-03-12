@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let  contacto_prueba = ContactoAgenda(nombre: "Miau", telefono: "1234")
+let  contacto_prueba = ContactoAgenda(nombre: "Miau", telefono: "1234", imagen: "canelita")
 struct contacto_prevista: View {
     var contacto_a_mostar: ContactoAgenda
     var al_pulsar: () -> Void = {print("No se ha implementado")}
@@ -40,7 +40,6 @@ struct contacto_prevista: View {
             Spacer()
             
         }
-        
         .frame(width: 300)
         .onTapGesture {
             al_pulsar()
