@@ -46,9 +46,9 @@ struct PantallaAgenda: View {
                 VStack(spacing: 10) {
                     ForEach(contactos_actuales){ contacto in
                         NavigationLink{
-                            Text("Hola mongolo")
+                            ContactoInfo(ContInfo: contacto)
                         } label: {
-                            contacto_prevista(contacto_a_mostar: contacto, al_pulsar: {print("Te envia saludos \(contacto.nombre) desde la pantalla de agendar")})}
+                            contacto_prevista(contacto_a_mostar: contacto)}
                         }
                         
                 }

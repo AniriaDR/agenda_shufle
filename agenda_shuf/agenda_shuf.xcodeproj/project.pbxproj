@@ -16,6 +16,7 @@
 		FB07572A2D6F7C0B00C6BEBF /* PantallaAgenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0757292D6F7C0B00C6BEBF /* PantallaAgenda.swift */; };
 		FB07572D2D6F801C00C6BEBF /* contacto_prevista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07572C2D6F801C00C6BEBF /* contacto_prevista.swift */; };
 		FB0757302D6F871700C6BEBF /* contacto_agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07572F2D6F871700C6BEBF /* contacto_agenda.swift */; };
+		FB67BE6A2D81E9D100BD4C7F /* contacto_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB67BE692D81E9D100BD4C7F /* contacto_info.swift */; };
 		FB7CD2572D78BD03006F7A5D /* pantalla_del_ganador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7CD2562D78BD03006F7A5D /* pantalla_del_ganador.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		FB0757292D6F7C0B00C6BEBF /* PantallaAgenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallaAgenda.swift; sourceTree = "<group>"; };
 		FB07572C2D6F801C00C6BEBF /* contacto_prevista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacto_prevista.swift; sourceTree = "<group>"; };
 		FB07572F2D6F871700C6BEBF /* contacto_agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacto_agenda.swift; sourceTree = "<group>"; };
+		FB67BE692D81E9D100BD4C7F /* contacto_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contacto_info.swift; sourceTree = "<group>"; };
 		FB7CD2562D78BD03006F7A5D /* pantalla_del_ganador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_del_ganador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,6 +51,7 @@
 			children = (
 				FB02CF3D2D7618CC0067B2F4 /* pantalla_agregar_contacto.swift */,
 				FB7CD2562D78BD03006F7A5D /* pantalla_del_ganador.swift */,
+				FB67BE692D81E9D100BD4C7F /* contacto_info.swift */,
 			);
 			path = pantallas;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				FB07572D2D6F801C00C6BEBF /* contacto_prevista.swift in Sources */,
 				FB07571C2D6F7B2000C6BEBF /* agenda_shufApp.swift in Sources */,
 				FB02CF3E2D7618CC0067B2F4 /* pantalla_agregar_contacto.swift in Sources */,
+				FB67BE6A2D81E9D100BD4C7F /* contacto_info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
